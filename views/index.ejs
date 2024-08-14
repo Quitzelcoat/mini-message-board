@@ -10,11 +10,14 @@
 
     <% for (let i= 0; i< message.length; i++) { %>
     <div class="eachMessage">
-      <div>User: <%= message[i].user %></div>
+      <h2>User: <%= message[i].user %></h2>
       <div>Text: <%= message[i].text %></div>
       <div>Date: <%= message[i].added %></div>
+      <a href="/message/<%= i %>">Open</a>
     </div>
     <br />
     <% } %>
+
+    <a href="/new">Add Message</a>
   </body>
 </html>

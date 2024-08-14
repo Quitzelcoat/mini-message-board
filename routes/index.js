@@ -21,13 +21,24 @@ router.get("/", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  res.render("new", { title: "New Message" });
-});
-
-router.get("/form", (req, res) => {
   res.render("form", { title: "Form Field" });
 });
 
-router.post("/new", (req, res) => {});
+router.get("/message/:id", (req, res) => {
+  const messageId = parseInt(req.params.id, 10);
+  const message = messages[messageId];
+
+  if (message) {
+    res.render("message", { title: "Message Detail", message: message });
+  } else {
+    res.status(404).send("Message not found");
+  }
+});
+
+router.post("/new", (req, res) => {
+  const { user, message } = req.body;
+  messages.push({ text: message, user: user, added: date.toDateString() });
+  res.redirect("/");
+});
 
 module.exports = router;
