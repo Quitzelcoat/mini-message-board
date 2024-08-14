@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+.git
+.gitignore
+Dockerfile
+.dockerignore
+node_modules
+.env
+README.md
