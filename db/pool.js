@@ -7,4 +7,7 @@ module.exports = new Pool({
   database: process.env.DB_DATABASE,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT, // The default port
+  ssl: {
+    rejectUnauthorized: false, // This is necessary if the server's SSL certificate isn't from a trusted CA
+  },
 });
