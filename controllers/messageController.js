@@ -1,7 +1,7 @@
 const pool = require("../db/pool");
 
 exports.getMessages = async (req, res) => {
-  const result = await pool.query("SELECT * FROM messages ORDER BY added DESC");
+  const result = await pool.query("SELECT * FROM messages");
   res.render("index", { title: "Mini Message Board", message: result.rows });
 };
 

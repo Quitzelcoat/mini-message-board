@@ -11,3 +11,5 @@ module.exports = new Pool({
     rejectUnauthorized: false, // Required for SSL connection without trusted CA
   },
 });
+
+// psql -h ep-yellow-butterfly-a2h6hupk.eu-central-1.pg.koyeb.app -U koyeb-adm -d messages
