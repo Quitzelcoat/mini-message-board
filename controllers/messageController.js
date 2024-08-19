@@ -31,7 +31,7 @@ exports.getMessageById = async (req, res) => {
 
 exports.createMessage = async (req, res) => {
   const { user, message } = req.body;
-  await pool.query("INSERT INTO messages (user_name, text) VALUES ($1, $2)", [
+  await pool.query("INSERT INTO messages (username, text) VALUES ($1, $2)", [
     user,
     message,
   ]);
